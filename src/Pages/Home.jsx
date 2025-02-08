@@ -15,7 +15,7 @@ const Home = () => {
       try {
         SetLoading(true);
         const response = await axios.get(
-          "http://localhost:4000/api/todo/gettodos",
+          "https://todoserver-2iij.onrender.com/api/todo/gettodos",
           {
             withCredentials: true,
             headers: {
@@ -43,7 +43,7 @@ const Home = () => {
     }
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/todo/todocreate",
+        "https://todoserver-2iij.onrender.com/api/todo/todocreate",
         {
           text: newtodo,
           completed: false,
@@ -69,7 +69,7 @@ const Home = () => {
     const todolist = tode.find((t) => t._id === id);
     try {
       const response = await axios.put(
-        `http://localhost:4000/api/todo/updatetodo/${id}`,
+        `https://todoserver-2iij.onrender.com/api/todo/updatetodo/${id}`,
         {
           ...todolist,
           completed: !todolist.completed,
@@ -93,7 +93,7 @@ const Home = () => {
   const TodoDelete = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:4000/api/todo/removetodo/${id}`,
+        `https://todoserver-2iij.onrender.com/api/todo/removetodo/${id}`,
         {
           withCredentials: true,
           headers: {
@@ -113,7 +113,7 @@ const Home = () => {
   const Logout = async()=>{
     try {
       const response = await axios.get(
-        "http://localhost:4000/api/user/logout",
+        "https://todoserver-2iij.onrender.com/api/user/logout",
         {
           withCredentials: true,
           headers: {

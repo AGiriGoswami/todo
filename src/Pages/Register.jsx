@@ -15,7 +15,7 @@ const Register = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:4000/api/user/register",
+        "https://todoserver-2iij.onrender.com/api/user/register",
         user,
         {
           withCredentials: true,
@@ -26,9 +26,11 @@ const Register = () => {
       );
 
       toast.success(res.data.message || "Account Created Successfully");
-      
+
       navigate("/login");
     } catch (error) {
+      console.log(error);
+      
       toast.error(error.response.data.errors || error.response.data.message);
     }
     setuser({
