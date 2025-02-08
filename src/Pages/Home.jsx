@@ -20,6 +20,7 @@ const Home = () => {
             withCredentials: true,
             headers: {
               "Content-Type": "application/json",
+              'Authorization': `Bearer ${token}`
             },
           }
         );
@@ -52,7 +53,9 @@ const Home = () => {
           withCredentials: true,
           headers: {
             "Content-Type": "application/json",
+            'Authorization': `Bearer ${token}`
           },
+          
         }
       );
       toast.success(response.data.message);
@@ -78,6 +81,7 @@ const Home = () => {
           withCredentials: true,
           headers: {
             "Content-Type": "application/json",
+            'Authorization': `Bearer ${token}`
           },
         }
       );
@@ -98,6 +102,7 @@ const Home = () => {
           withCredentials: true,
           headers: {
             "Content-Type": "application/json",
+            'Authorization': `Bearer ${token}`
           },
         }
       );
