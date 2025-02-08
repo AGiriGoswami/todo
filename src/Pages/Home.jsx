@@ -9,6 +9,7 @@ const Home = () => {
   const [loading, SetLoading] = useState(false);
   const [newtodo, Setnewtodo] = useState("");
   const navigate = useNavigate()
+  const token = localStorage.getItem("jwt");
 
   useEffect(() => {
     const featchdata = async () => {
