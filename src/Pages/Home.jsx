@@ -35,7 +35,7 @@ const Home = () => {
       }
     };
     featchdata();
-  }, []);
+  }, [token]);
 
   const TodoCreate = async () => {
     if (!TodoCreate) return;
