@@ -20,17 +20,17 @@ const Login = () => {
           withCredentials: true,
         }
       );
+      console.log(res);
       Navigate("/");
-      localStorage.setItem("jwt", res.data.preuser.token); // Store the token
+      localStorage.setItem("jwt", res.data.token); // Store the token
       toast.success(res.data.message);
-    
     } catch (error) {
       toast.error(error.response.data.errors || error.response.data.message);
     }
   };
   return (
-    <div>
-      <div className="flex justify-center cursor-pointer">
+    <div className="flex items-center justify-center m-36">
+      <div className="flex justify-center">
         <form onSubmit={HandleSubmit}>
           <div className="card w-96 bg-base-100 shadow-xl justify-center items-center">
             <div className="card-body">

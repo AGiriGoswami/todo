@@ -41,7 +41,7 @@ const Register = () => {
   return (
     <>
       <div>
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-20">
           <form onSubmit={HandleSubmit}>
             <div className="card w-96 bg-base-100 shadow-xl justify-center items-center ">
               <div className="card-body">

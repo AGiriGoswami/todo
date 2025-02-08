@@ -23,7 +23,7 @@ const Home = () => {
             },
           }
         );
-        console.log(response.data.pretodo);
+        // console.log(response.data.pretodo);
         setTode(response.data.pretodo);
         setError(null);
       } catch (error) {
