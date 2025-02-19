@@ -13,27 +13,27 @@ const Home = () => {
 
   useEffect(() => {
     const featchdata = async () => {
-      try {
-        SetLoading(true);
-        const response = await axios.get(
-          "https://todoserver-2iij.onrender.com/api/todo/gettodos",
-          {
-            withCredentials: true,
-            headers: {
-              "Content-Type": "application/json",
-              'Authorization': `Bearer ${token}`
-            },
-          }
-        );
-        // console.log(response.data.pretodo);
-        setTode(response.data.pretodo);
-        setError(null);
-      } catch (error) {
-        setError("Failed to Featch Todo" || error);
-      } finally {
-        SetLoading(false);
+  try {
+    SetLoading(true);
+    const response = await axios.get(
+      "https://todoserver-2iij.onrender.com/api/todo/gettodos",
+      {
+        withCredentials: true,
+        headers: {
+          "Content-Type": "application/json",
+          'Authorization': `Bearer ${token}`
+        },
       }
-    };
+    );
+    setTode(response.data.pretodo);
+    setError(null);
+  } catch (error) {
+    console.error("Error fetching todos:", error.response ? error.response.data : error.message);
+    setError("Failed to Fetch Todo: " + (error.response ? error.response.data.message : error.message));
+  } finally {
+    SetLoading(false);
+  }
+};
     featchdata();
   }, [token]);
 
