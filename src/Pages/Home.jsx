@@ -11,6 +11,8 @@ const Home = () => {
   const navigate = useNavigate()
   const token = localStorage.getItem("jwt");
 
+  console.log(token)
+
   useEffect(() => {
     const featchdata = async () => {
   try {
